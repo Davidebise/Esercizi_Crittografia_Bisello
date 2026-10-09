@@ -5,9 +5,10 @@ public class Cesare {
         }
         key=key%26;
         StringBuilder result = new StringBuilder();
+        char ch;
 
         for (int i = 0; i < message.length(); i++) {
-            char ch = message.charAt(i);
+            ch = message.charAt(i);
 
             if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
                 if (((ch <= 90 && (ch + key) > 90)) || (ch + key) > 122) {
@@ -28,9 +29,10 @@ public class Cesare {
         }
         key=key%26;
         StringBuilder result = new StringBuilder();
+        char ch;
 
         for (int i = 0; i < message.length(); i++) {
-            char ch = message.charAt(i);
+            ch = message.charAt(i);
 
             if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
                 if (((ch <= 90 && (ch - key) < 65)) || (ch - key) < 97) {
@@ -39,7 +41,7 @@ public class Cesare {
                     result.append((char) (ch - key));
                 }
             } else {
-                result.append(ch);
+                result.append(ch - key);
             }
         }
         return result.toString();
